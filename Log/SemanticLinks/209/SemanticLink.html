@@ -1,0 +1,311 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+ var GPSdata0 = new Array();
+ GPSdata0.push({lat:'35.47890798', lng:'139.5069686', LINK_ID:'RB140900509769', NODE_ID:'RN140900987653'});
+ GPSdata0.push({lat:'35.47866876', lng:'139.5065046', LINK_ID:'RB140900509769', NODE_ID:''});
+ GPSdata0.push({lat:'35.47855641', lng:'139.5062912', LINK_ID:'RB140900509769', NODE_ID:'RN140900987654'});
+ 
+ var GPSdata1 = new Array();
+ GPSdata1.push({lat:'35.48029633', lng:'139.5097192', LINK_ID:'RB140900509770', NODE_ID:'RN140900987655'});
+ GPSdata1.push({lat:'35.47951427', lng:'139.508174', LINK_ID:'RB140900509770', NODE_ID:''});
+ GPSdata1.push({lat:'35.47935479', lng:'139.5078628', LINK_ID:'RB140900509770', NODE_ID:'RN140900987656'});
+ 
+ var GPSdata2 = new Array();
+ GPSdata2.push({lat:'35.48029633', lng:'139.5097192', LINK_ID:'RB140900510296', NODE_ID:'RN140900987655'});
+ GPSdata2.push({lat:'35.48074308', lng:'139.5106001', LINK_ID:'RB140900510296', NODE_ID:'RN140900987773'});
+ 
+ var GPSdata3 = new Array();
+ GPSdata3.push({lat:'35.48074308', lng:'139.5106001', LINK_ID:'RB140900510297', NODE_ID:'RN140900987773'});
+ GPSdata3.push({lat:'35.48082464', lng:'139.5107607', LINK_ID:'RB140900510297', NODE_ID:'RN140900987766'});
+ 
+ var GPSdata4 = new Array();
+ GPSdata4.push({lat:'35.48082464', lng:'139.5107607', LINK_ID:'RB140900510298', NODE_ID:'RN140900987766'});
+ GPSdata4.push({lat:'35.48181954', lng:'139.5126996', LINK_ID:'RB140900510298', NODE_ID:''});
+ GPSdata4.push({lat:'35.48207426', lng:'139.5132386', LINK_ID:'RB140900510298', NODE_ID:'RN140900988080'});
+ 
+ var GPSdata5 = new Array();
+ GPSdata5.push({lat:'35.47598444', lng:'139.502879', LINK_ID:'RB140900510342', NODE_ID:'RN140900988093'});
+ GPSdata5.push({lat:'35.47503053', lng:'139.5018085', LINK_ID:'RB140900510342', NODE_ID:'RN140900988094'});
+ 
+ var GPSdata6 = new Array();
+ GPSdata6.push({lat:'35.47763369', lng:'139.5047478', LINK_ID:'RB140900510369', NODE_ID:'RN140900980781'});
+ GPSdata6.push({lat:'35.47746821', lng:'139.5045545', LINK_ID:'RB140900510369', NODE_ID:''});
+ GPSdata6.push({lat:'35.47598444', lng:'139.502879', LINK_ID:'RB140900510369', NODE_ID:'RN140900988093'});
+ 
+ var GPSdata7 = new Array();
+ GPSdata7.push({lat:'35.47855641', lng:'139.5062912', LINK_ID:'RB140900510370', NODE_ID:'RN140900987654'});
+ GPSdata7.push({lat:'35.47845765', lng:'139.5061032', LINK_ID:'RB140900510370', NODE_ID:''});
+ GPSdata7.push({lat:'35.47805458', lng:'139.5053874', LINK_ID:'RB140900510370', NODE_ID:''});
+ GPSdata7.push({lat:'35.47782022', lng:'139.5050556', LINK_ID:'RB140900510370', NODE_ID:''});
+ GPSdata7.push({lat:'35.47763369', lng:'139.5047478', LINK_ID:'RB140900510370', NODE_ID:'RN140900980781'});
+ 
+ var GPSdata8 = new Array();
+ GPSdata8.push({lat:'35.47890798', lng:'139.5069686', LINK_ID:'RB140900510415', NODE_ID:'RN140900987653'});
+ GPSdata8.push({lat:'35.47912913', lng:'139.5074152', LINK_ID:'RB140900510415', NODE_ID:''});
+ GPSdata8.push({lat:'35.47935479', lng:'139.5078628', LINK_ID:'RB140900510415', NODE_ID:'RN140900987656'});
+ 
+ var GPSdata9 = new Array();
+ GPSdata9.push({lat:'35.47433081', lng:'139.5010665', LINK_ID:'RB140900513684', NODE_ID:'RN140900987643'});
+ GPSdata9.push({lat:'35.47503053', lng:'139.5018085', LINK_ID:'RB140900513684', NODE_ID:'RN140900988094'});
+ 
+var map;
+var image_center;
+var center_marker;
+function initialize() {
+ map = new google.maps.Map(document.getElementById("map"), {
+     zoom: 14,
+     center: new google.maps.LatLng(35.47433081, 139.5010665),
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+ });
+ 
+ var image_black = new google.maps.MarkerImage('../../../image/icon_black.gif',
+     new google.maps.Size(15, 15),
+     new google.maps.Point(0, 0),
+     new google.maps.Point(8, 8));
+ 
+ var paths0 =	new Array();
+ for (var i = 0; i < GPSdata0.length; i++){
+	    paths0.push(new google.maps.LatLng(eval(GPSdata0[i].lat),eval(GPSdata0[i].lng)));
+ }
+ var poly0 = new google.maps.Polyline({
+     path: paths0,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly0.setMap(map);
+ 
+ var markers0 = new Array();
+ for (i = 0; i < GPSdata0.length; i ++) {
+       markers0[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata0[i].lat, GPSdata0[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers0[i], GPSdata0[i].LINK_ID, GPSdata0[i].NODE_ID); 
+ }
+ 
+ var paths1 =	new Array();
+ for (var i = 0; i < GPSdata1.length; i++){
+	    paths1.push(new google.maps.LatLng(eval(GPSdata1[i].lat),eval(GPSdata1[i].lng)));
+ }
+ var poly1 = new google.maps.Polyline({
+     path: paths1,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly1.setMap(map);
+ 
+ var markers1 = new Array();
+ for (i = 0; i < GPSdata1.length; i ++) {
+       markers1[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata1[i].lat, GPSdata1[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers1[i], GPSdata1[i].LINK_ID, GPSdata1[i].NODE_ID); 
+ }
+ 
+ var paths2 =	new Array();
+ for (var i = 0; i < GPSdata2.length; i++){
+	    paths2.push(new google.maps.LatLng(eval(GPSdata2[i].lat),eval(GPSdata2[i].lng)));
+ }
+ var poly2 = new google.maps.Polyline({
+     path: paths2,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly2.setMap(map);
+ 
+ var markers2 = new Array();
+ for (i = 0; i < GPSdata2.length; i ++) {
+       markers2[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata2[i].lat, GPSdata2[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers2[i], GPSdata2[i].LINK_ID, GPSdata2[i].NODE_ID); 
+ }
+ 
+ var paths3 =	new Array();
+ for (var i = 0; i < GPSdata3.length; i++){
+	    paths3.push(new google.maps.LatLng(eval(GPSdata3[i].lat),eval(GPSdata3[i].lng)));
+ }
+ var poly3 = new google.maps.Polyline({
+     path: paths3,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly3.setMap(map);
+ 
+ var markers3 = new Array();
+ for (i = 0; i < GPSdata3.length; i ++) {
+       markers3[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata3[i].lat, GPSdata3[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers3[i], GPSdata3[i].LINK_ID, GPSdata3[i].NODE_ID); 
+ }
+ 
+ var paths4 =	new Array();
+ for (var i = 0; i < GPSdata4.length; i++){
+	    paths4.push(new google.maps.LatLng(eval(GPSdata4[i].lat),eval(GPSdata4[i].lng)));
+ }
+ var poly4 = new google.maps.Polyline({
+     path: paths4,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly4.setMap(map);
+ 
+ var markers4 = new Array();
+ for (i = 0; i < GPSdata4.length; i ++) {
+       markers4[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata4[i].lat, GPSdata4[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers4[i], GPSdata4[i].LINK_ID, GPSdata4[i].NODE_ID); 
+ }
+ 
+ var paths5 =	new Array();
+ for (var i = 0; i < GPSdata5.length; i++){
+	    paths5.push(new google.maps.LatLng(eval(GPSdata5[i].lat),eval(GPSdata5[i].lng)));
+ }
+ var poly5 = new google.maps.Polyline({
+     path: paths5,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly5.setMap(map);
+ 
+ var markers5 = new Array();
+ for (i = 0; i < GPSdata5.length; i ++) {
+       markers5[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata5[i].lat, GPSdata5[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers5[i], GPSdata5[i].LINK_ID, GPSdata5[i].NODE_ID); 
+ }
+ 
+ var paths6 =	new Array();
+ for (var i = 0; i < GPSdata6.length; i++){
+	    paths6.push(new google.maps.LatLng(eval(GPSdata6[i].lat),eval(GPSdata6[i].lng)));
+ }
+ var poly6 = new google.maps.Polyline({
+     path: paths6,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly6.setMap(map);
+ 
+ var markers6 = new Array();
+ for (i = 0; i < GPSdata6.length; i ++) {
+       markers6[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata6[i].lat, GPSdata6[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers6[i], GPSdata6[i].LINK_ID, GPSdata6[i].NODE_ID); 
+ }
+ 
+ var paths7 =	new Array();
+ for (var i = 0; i < GPSdata7.length; i++){
+	    paths7.push(new google.maps.LatLng(eval(GPSdata7[i].lat),eval(GPSdata7[i].lng)));
+ }
+ var poly7 = new google.maps.Polyline({
+     path: paths7,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly7.setMap(map);
+ 
+ var markers7 = new Array();
+ for (i = 0; i < GPSdata7.length; i ++) {
+       markers7[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata7[i].lat, GPSdata7[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers7[i], GPSdata7[i].LINK_ID, GPSdata7[i].NODE_ID); 
+ }
+ 
+ var paths8 =	new Array();
+ for (var i = 0; i < GPSdata8.length; i++){
+	    paths8.push(new google.maps.LatLng(eval(GPSdata8[i].lat),eval(GPSdata8[i].lng)));
+ }
+ var poly8 = new google.maps.Polyline({
+     path: paths8,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly8.setMap(map);
+ 
+ var markers8 = new Array();
+ for (i = 0; i < GPSdata8.length; i ++) {
+       markers8[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata8[i].lat, GPSdata8[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers8[i], GPSdata8[i].LINK_ID, GPSdata8[i].NODE_ID); 
+ }
+ 
+ var paths9 =	new Array();
+ for (var i = 0; i < GPSdata9.length; i++){
+	    paths9.push(new google.maps.LatLng(eval(GPSdata9[i].lat),eval(GPSdata9[i].lng)));
+ }
+ var poly9 = new google.maps.Polyline({
+     path: paths9,
+     strokeColor: "#FF0000",
+     strokeOpacity: 0.8,
+     strokeWeight: 2
+    });
+ 
+ poly9.setMap(map);
+ 
+ var markers9 = new Array();
+ for (i = 0; i < GPSdata9.length; i ++) {
+       markers9[i] = new google.maps.Marker({
+       position: new google.maps.LatLng(GPSdata9[i].lat, GPSdata9[i].lng),
+       map: map
+       ,icon: image_black
+       });
+ dispInfo(markers9[i], GPSdata9[i].LINK_ID, GPSdata9[i].NODE_ID); 
+ }
+ 
+ function dispInfo(marker,aggregation,node) { 
+     google.maps.event.addListener(marker, 'click', function(event) {
+         var string = "SEMANTIC_LINK_ID : 209<br>SEMANTICS : 下川井IC～西部病院入口<br>LINK_ID : " + aggregation + "<br>NODE_ID : " + node + "<br>";
+         new google.maps.InfoWindow({content:string,disableAutoPan: true}).open(marker.getMap(), marker);
+     }); 
+ }
+}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+  <div id="map" style="width: 300; height: 300;"></div>
+</body>
+</html>

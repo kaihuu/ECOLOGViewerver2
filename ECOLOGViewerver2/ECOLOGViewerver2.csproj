@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C0EC2C5-3ABD-4B7D-A633-CA9BCDB7387A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECOLOGViewerver2</RootNamespace>
+    <AssemblyName>ECOLOGViewerver2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v12.0\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotation\AnnotationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Annotation\AnnotationDialog.Designer.cs">
+      <DependentUpon>AnnotationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Annotation\EasyBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Annotation\EasyBrowser.Designer.cs">
+      <DependentUpon>EasyBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryGraph\HistoryGraphDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryGraph\HistoryGraphDialog.Designer.cs">
+      <DependentUpon>HistoryGraphDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryGraph\HistoryGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryGraph\HistoryGraph.Designer.cs">
+      <DependentUpon>HistoryGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Old\TripSelectionDialog_Daily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Old\TripSelectionDialog_Daily.Designer.cs">
+      <DependentUpon>TripSelectionDialog_Daily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V2XEstimation\AvailableEnergyChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V2XEstimation\AvailableEnergyChart.Designer.cs">
+      <DependentUpon>AvailableEnergyChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V2XEstimation\CalendarProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V2XEstimation\CalendarProperty.Designer.cs">
+      <DependentUpon>CalendarProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V2XEstimation\Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V2XEstimation\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Old\Histogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Old\Histogram.Designer.cs">
+      <DependentUpon>Histogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Old\Radarchart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Old\Radarchart.Designer.cs">
+      <DependentUpon>Radarchart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkEditor.Designer.cs">
+      <DependentUpon>SemanticLinkEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkBrowser.Designer.cs">
+      <DependentUpon>SemanticLinkBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemanticLink\SemanticLinkDialog.Designer.cs">
+      <DependentUpon>SemanticLinkDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\AverageQueryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\AverageQueryDialog.Designer.cs">
+      <DependentUpon>AverageQueryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\Calculation.cs" />
+    <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="TripBrowser\TimeChartProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\TimeChartProperty.Designer.cs">
+      <DependentUpon>TimeChartProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\TimeChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\TimeChart.Designer.cs">
+      <DependentUpon>TimeChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trajectory.cs" />
+    <Compile Include="TripBrowser\LeafSpyBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\LeafSpyBrowser.Designer.cs">
+      <DependentUpon>LeafSpyBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDialog.Designer.cs">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryView.Designer.cs">
+      <DependentUpon>QueryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\ChartControler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\ChartControler.Designer.cs">
+      <DependentUpon>ChartControler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormData.cs" />
+    <Compile Include="TripBrowser\TripBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\TripBrowser.Designer.cs">
+      <DependentUpon>TripBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\TripSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\TripSelectionDialog.Designer.cs">
+      <DependentUpon>TripSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TripBrowser\WorstQueryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TripBrowser\WorstQueryDialog.Designer.cs">
+      <DependentUpon>WorstQueryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V2XEstimation\V2XDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V2XEstimation\V2XDialog.Designer.cs">
+      <DependentUpon>V2XDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WriteLog.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SemanticLink\SemanticLinkBrowser.resx">
+      <DependentUpon>SemanticLinkBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TripBrowser\TripBrowser.resx">
+      <DependentUpon>TripBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TripBrowser\TripSelectionDialog.resx">
+      <DependentUpon>TripSelectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\center_marker.gif" />
+    <Content Include="Image\icon_black.gif" />
+    <Content Include="Image\icon_blue.gif" />
+    <Content Include="Image\icon_large.png" />
+    <Content Include="Image\icon_normal.png" />
+    <Content Include="Image\icon_red.gif" />
+    <Content Include="Image\icon_small.png" />
+    <Content Include="Image\icon_white.gif" />
+    <Content Include="Image\noimage.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

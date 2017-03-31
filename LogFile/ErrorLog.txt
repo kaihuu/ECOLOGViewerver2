@@ -1,0 +1,42 @@
+---------------------------------------------------------------
+2014/07/04 16:02:43
+GetResult:System.Data.SqlClient.SqlException (0x80131904): マルチパート識別子 "ECOLOG.TRIP_ID" をバインドできませんでした。
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   場所 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   場所 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   場所 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   場所 ECOLOGViewerver2.DatabaseAccess.GetResult(String query) 場所 c:\Users\hagimoto\Documents\Visual Studio 2013\Projects\ECOLOGViewerver2\ECOLOGViewerver2\DatabaseAccess.cs:行 41
+ClientConnectionId:c5542e4c-3f31-4768-9a72-e80f00c8333b
+---------------------------------------------------------------
+2014/07/04 16:09:34
+GetResult:System.Data.SqlClient.SqlException (0x80131904): オブジェクト名 'Compare.TRIPS' が無効です。
+   場所 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   場所 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   場所 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   場所 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   場所 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   場所 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   場所 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   場所 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   場所 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   場所 ECOLOGViewerver2.DatabaseAccess.GetResult(String query) 場所 c:\Users\hagimoto\Documents\Visual Studio 2013\Projects\ECOLOGViewerver2\ECOLOGViewerver2\DatabaseAccess.cs:行 41
+ClientConnectionId:4f3921c3-b9d7-450b-a18c-c10c20ccfd47

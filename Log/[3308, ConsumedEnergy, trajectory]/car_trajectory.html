@@ -1,0 +1,253 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var map;
+var image_center;
+var center_marker;
+function initialize() {
+     map = new google.maps.Map(document.getElementById("map"), {
+     zoom: 17,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+ });
+ 
+ map.setCenter(new google.maps.LatLng(43.36723539, 141.71589411));
+ var GPSdata = new Array();
+ GPSdata.push({lat:'43.36723539', lng:'141.71589411', time:'2014/08/21 13:49:24', acc_x:'0.03653623', acc_y:'-0.07508224', acc_z:'9.828518', speed:'0.135267', heading:'151.5528', efficiency:'80', lost_energy:'2.638892E-06', consumption_energy:'4.131423E-07', LINK_ID:''});
+ GPSdata.push({lat:'43.36723819', lng:'141.7158898', time:'2014/08/21 13:49:25', acc_x:'0.05247672', acc_y:'-0.08000952', acc_z:'9.846655', speed:'0.72', heading:'311.7855', efficiency:'80', lost_energy:'5.793663E-06', consumption_energy:'1.129212E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36723837', lng:'141.71588957', time:'2014/08/21 13:49:26', acc_x:'0.0353764', acc_y:'-0.07128336', acc_z:'9.824688', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0.0003253883', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3672381', lng:'141.71589012', time:'2014/08/21 13:49:27', acc_x:'0.05109014', acc_y:'-0.07595535', acc_z:'9.822411', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3672381', lng:'141.71589016', time:'2014/08/21 13:49:28', acc_x:'0.0318888', acc_y:'-0.07037655', acc_z:'9.83259', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723825', lng:'141.71589014', time:'2014/08/21 13:49:29', acc_x:'0.04166946', acc_y:'-0.07742354', acc_z:'9.817296', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723817', lng:'141.7158903', time:'2014/08/21 13:49:30', acc_x:'0.03907892', acc_y:'-0.06916772', acc_z:'9.835256', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723816', lng:'141.71589031', time:'2014/08/21 13:49:31', acc_x:'0.05004245', acc_y:'-0.08322327', acc_z:'9.838342', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723813', lng:'141.71589035', time:'2014/08/21 13:49:32', acc_x:'0.04443562', acc_y:'-0.0681475', acc_z:'9.816355', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723798', lng:'141.71589058', time:'2014/08/21 13:49:33', acc_x:'-0.06217391', acc_y:'-0.04652372', acc_z:'9.761768', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723781', lng:'141.71589078', time:'2014/08/21 13:49:34', acc_x:'-0.9268463', acc_y:'0.1481273', acc_z:'9.890952', speed:'0', heading:'311.7855', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723768', lng:'141.71589097', time:'2014/08/21 13:49:35', acc_x:'-0.567856', acc_y:'-0.006602311', acc_z:'9.783813', speed:'1.8', heading:'311.7855', efficiency:'80', lost_energy:'0.00286986', consumption_energy:'0.0001161918', LINK_ID:''});
+ GPSdata.push({lat:'43.36724732', lng:'141.71589162', time:'2014/08/21 13:49:36', acc_x:'0.08258176', acc_y:'-0.4110738', acc_z:'9.832117', speed:'5.04', heading:'2.80625', efficiency:'83', lost_energy:'0.0002037351', consumption_energy:'0.0005987688', LINK_ID:''});
+ GPSdata.push({lat:'43.3672625', lng:'141.71588391', time:'2014/08/21 13:49:37', acc_x:'0.424523', acc_y:'-0.183076', acc_z:'9.854055', speed:'4.68', heading:'339.7343', efficiency:'83', lost_energy:'5.114342E-05', consumption_energy:'3.193623E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36726949', lng:'141.71587905', time:'2014/08/21 13:49:38', acc_x:'1.3438', acc_y:'0.02335748', acc_z:'9.767768', speed:'3.6', heading:'333.1859', efficiency:'81', lost_energy:'0.0001762277', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36727853', lng:'141.71587218', time:'2014/08/21 13:49:39', acc_x:'0.5573755', acc_y:'-0.1699825', acc_z:'9.73137', speed:'3.96', heading:'331.081', efficiency:'82', lost_energy:'9.209182E-05', consumption_energy:'0.0001524603', LINK_ID:''});
+ GPSdata.push({lat:'43.36728765', lng:'141.71586999', time:'2014/08/21 13:49:40', acc_x:'0.6990834', acc_y:'-0.0567086', acc_z:'9.832458', speed:'7.2', heading:'350.0978', efficiency:'87', lost_energy:'0.0002814187', consumption_energy:'0.0009099807', LINK_ID:''});
+ GPSdata.push({lat:'43.36726096', lng:'141.71587955', time:'2014/08/21 13:49:41', acc_x:'0.328858', acc_y:'0.03848828', acc_z:'9.774319', speed:'7.56', heading:'165.4049', efficiency:'88', lost_energy:'5.980297E-05', consumption_energy:'0.0002744699', LINK_ID:''});
+ GPSdata.push({lat:'43.36725134', lng:'141.71588301', time:'2014/08/21 13:49:42', acc_x:'0.3026482', acc_y:'-0.002018776', acc_z:'9.760439', speed:'5.76', heading:'165.3471', efficiency:'85', lost_energy:'0.0003723565', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36723405', lng:'141.71589337', time:'2014/08/21 13:49:43', acc_x:'0.5260049', acc_y:'-0.07348063', acc_z:'9.787433', speed:'7.92', heading:'156.4624', efficiency:'88', lost_energy:'0.0001301567', consumption_energy:'0.0007799374', LINK_ID:''});
+ GPSdata.push({lat:'43.36721729', lng:'141.71590811', time:'2014/08/21 13:49:44', acc_x:'0.2942143', acc_y:'-0.08517802', acc_z:'9.801886', speed:'8.28', heading:'147.4072', efficiency:'89', lost_energy:'8.933955E-05', consumption_energy:'0.0002977314', LINK_ID:''});
+ GPSdata.push({lat:'43.36719803', lng:'141.71592258', time:'2014/08/21 13:49:45', acc_x:'0.09588885', acc_y:'-0.1521865', acc_z:'9.857782', speed:'8.64', heading:'151.358', efficiency:'83', lost_energy:'9.379756E-05', consumption_energy:'0.0003334066', LINK_ID:''});
+ GPSdata.push({lat:'43.36718088', lng:'141.7159386', time:'2014/08/21 13:49:46', acc_x:'0.1939607', acc_y:'-0.1117891', acc_z:'9.834414', speed:'8.64', heading:'145.8208', efficiency:'87', lost_energy:'8.309969E-05', consumption_energy:'0.0001916067', LINK_ID:''});
+ GPSdata.push({lat:'43.36716051', lng:'141.71595312', time:'2014/08/21 13:49:47', acc_x:'0.1458404', acc_y:'-0.121492', acc_z:'9.863283', speed:'9.36', heading:'152.6071', efficiency:'85', lost_energy:'0.0001042056', consumption_energy:'0.0004882107', LINK_ID:''});
+ GPSdata.push({lat:'43.36713971', lng:'141.71596942', time:'2014/08/21 13:49:48', acc_x:'0.07985846', acc_y:'-0.1134667', acc_z:'9.836895', speed:'9.72', heading:'150.3302', efficiency:'83', lost_energy:'9.6964E-05', consumption_energy:'0.0003759798', LINK_ID:''});
+ GPSdata.push({lat:'43.36711753', lng:'141.71598522', time:'2014/08/21 13:49:49', acc_x:'0.08420909', acc_y:'-0.1095627', acc_z:'9.81963', speed:'10.08', heading:'152.6222', efficiency:'83', lost_energy:'9.64645E-05', consumption_energy:'0.0003902122', LINK_ID:''});
+ GPSdata.push({lat:'43.36709515', lng:'141.71600202', time:'2014/08/21 13:49:50', acc_x:'-0.02708324', acc_y:'-0.1240112', acc_z:'9.81083', speed:'11.52', heading:'151.3781', efficiency:'80', lost_energy:'0.0001581542', consumption_energy:'0.000982107', LINK_ID:''});
+ GPSdata.push({lat:'43.36706684', lng:'141.71602213', time:'2014/08/21 13:49:51', acc_x:'-0.1721425', acc_y:'-0.1233086', acc_z:'9.880094', speed:'12.6', heading:'152.688', efficiency:'80', lost_energy:'0.0001265062', consumption_energy:'0.0008951738', LINK_ID:''});
+ GPSdata.push({lat:'43.36703931', lng:'141.71604124', time:'2014/08/21 13:49:52', acc_x:'-0.1954639', acc_y:'-0.1441721', acc_z:'9.783834', speed:'12.24', heading:'153.2232', efficiency:'80', lost_energy:'7.275414E-05', consumption_energy:'9.597632E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.3670124', lng:'141.71605893', time:'2014/08/21 13:49:53', acc_x:'-0.2048855', acc_y:'-0.1360121', acc_z:'9.720799', speed:'11.88', heading:'154.4572', efficiency:'80', lost_energy:'7.291655E-05', consumption_energy:'9.276532E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36698613', lng:'141.71607778', time:'2014/08/21 13:49:54', acc_x:'-0.2303824', acc_y:'-0.151157', acc_z:'9.827006', speed:'11.88', heading:'152.4518', efficiency:'80', lost_energy:'8.76745E-05', consumption_energy:'0.0002888282', LINK_ID:''});
+ GPSdata.push({lat:'43.3669597', lng:'141.7160972', time:'2014/08/21 13:49:55', acc_x:'-0.2951191', acc_y:'-0.1652808', acc_z:'9.795101', speed:'11.88', heading:'151.8908', efficiency:'81', lost_energy:'8.562169E-05', consumption_energy:'0.0002852624', LINK_ID:''});
+ GPSdata.push({lat:'43.36693426', lng:'141.71611598', time:'2014/08/21 13:49:56', acc_x:'-0.3787943', acc_y:'-0.1994066', acc_z:'9.829864', speed:'11.52', heading:'151.7795', efficiency:'83', lost_energy:'7.192743E-05', consumption_energy:'8.63427E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36690835', lng:'141.71613561', time:'2014/08/21 13:49:57', acc_x:'-0.6391512', acc_y:'-0.2233514', acc_z:'9.850657', speed:'11.88', heading:'151.1553', efficiency:'90', lost_energy:'8.551149E-05', consumption_energy:'0.0004258124', LINK_ID:''});
+ GPSdata.push({lat:'43.36688221', lng:'141.71615443', time:'2014/08/21 13:49:58', acc_x:'-0.4442571', acc_y:'-0.2090015', acc_z:'9.916327', speed:'11.88', heading:'152.3726', efficiency:'86', lost_energy:'8.190372E-05', consumption_energy:'0.0002686774', LINK_ID:''});
+ GPSdata.push({lat:'43.36685598', lng:'141.71617294', time:'2014/08/21 13:49:59', acc_x:'-0.7258351', acc_y:'-0.2078834', acc_z:'9.8912', speed:'11.88', heading:'152.8417', efficiency:'91', lost_energy:'7.74678E-05', consumption_energy:'0.0002539149', LINK_ID:''});
+ GPSdata.push({lat:'43.36682994', lng:'141.7161907', time:'2014/08/21 13:50:00', acc_x:'-0.7310059', acc_y:'-0.2058159', acc_z:'9.765599', speed:'11.16', heading:'153.6271', efficiency:'90', lost_energy:'6.722505E-05', consumption_energy:'-6.744147E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36680601', lng:'141.71620821', time:'2014/08/21 13:50:01', acc_x:'-0.4475716', acc_y:'-0.2589483', acc_z:'9.79517', speed:'10.44', heading:'151.9898', efficiency:'86', lost_energy:'6.829719E-05', consumption_energy:'-6.105097E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36678327', lng:'141.71622538', time:'2014/08/21 13:50:02', acc_x:'-0.3457928', acc_y:'-0.2692626', acc_z:'9.851258', speed:'9.36', heading:'151.2374', efficiency:'82', lost_energy:'7.452369E-05', consumption_energy:'-0.000152006', LINK_ID:''});
+ GPSdata.push({lat:'43.36676485', lng:'141.71624077', time:'2014/08/21 13:50:03', acc_x:'-0.2230197', acc_y:'-0.3085541', acc_z:'9.781923', speed:'9', heading:'148.7259', efficiency:'80', lost_energy:'7.568974E-05', consumption_energy:'6.797992E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36674553', lng:'141.7162573', time:'2014/08/21 13:50:04', acc_x:'-0.5930646', acc_y:'-0.3166418', acc_z:'9.832314', speed:'9', heading:'148.1187', efficiency:'90', lost_energy:'7.630985E-05', consumption_energy:'0.0001930863', LINK_ID:''});
+ GPSdata.push({lat:'43.36672729', lng:'141.71627352', time:'2014/08/21 13:50:05', acc_x:'-1.214644', acc_y:'-0.349596', acc_z:'9.826057', speed:'8.28', heading:'147.1188', efficiency:'89', lost_energy:'6.673707E-05', consumption_energy:'-5.22958E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36671021', lng:'141.71628735', time:'2014/08/21 13:50:06', acc_x:'-1.630419', acc_y:'-0.3631707', acc_z:'9.849954', speed:'6.84', heading:'149.517', efficiency:'87', lost_energy:'0.0001695276', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36669704', lng:'141.71629751', time:'2014/08/21 13:50:07', acc_x:'-1.212527', acc_y:'-0.349784', acc_z:'9.831211', speed:'3.6', heading:'150.7152', efficiency:'81', lost_energy:'0.0003457174', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3666985', lng:'141.71629461', time:'2014/08/21 13:50:08', acc_x:'-0.5931517', acc_y:'-0.340431', acc_z:'9.82298', speed:'2.52', heading:'304.7036', efficiency:'80', lost_energy:'0.0003971538', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36670633', lng:'141.71628495', time:'2014/08/21 13:50:09', acc_x:'-0.46179', acc_y:'-0.3306607', acc_z:'9.822354', speed:'3.24', heading:'318.1117', efficiency:'81', lost_energy:'8.363956E-05', consumption_energy:'0.0001690589', LINK_ID:''});
+ GPSdata.push({lat:'43.36671022', lng:'141.71628043', time:'2014/08/21 13:50:10', acc_x:'-0.6334012', acc_y:'-0.3291535', acc_z:'9.820516', speed:'1.44', heading:'319.8119', efficiency:'80', lost_energy:'0.0002551491', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36671159', lng:'141.71627883', time:'2014/08/21 13:50:11', acc_x:'-1.846405', acc_y:'-0.2263483', acc_z:'9.874562', speed:'1.08', heading:'319.8119', efficiency:'80', lost_energy:'0.0001045067', consumption_energy:'5.329591E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36671083', lng:'141.71628452', time:'2014/08/21 13:50:12', acc_x:'-1.718892', acc_y:'-0.3282305', acc_z:'9.869461', speed:'3.96', heading:'100.4109', efficiency:'82', lost_energy:'0.000348015', consumption_energy:'0.0004122601', LINK_ID:''});
+ GPSdata.push({lat:'43.36672533', lng:'141.71627565', time:'2014/08/21 13:50:13', acc_x:'-1.551563', acc_y:'-0.5118055', acc_z:'9.795899', speed:'7.56', heading:'336.0249', efficiency:'88', lost_energy:'0.0001728984', consumption_energy:'0.00101669', LINK_ID:''});
+ GPSdata.push({lat:'43.36674523', lng:'141.71626531', time:'2014/08/21 13:50:14', acc_x:'-0.6889396', acc_y:'-0.8873543', acc_z:'9.804709', speed:'12.24', heading:'339.3068', efficiency:'90', lost_energy:'0.0002260476', consumption_energy:'0.002124629', LINK_ID:''});
+ GPSdata.push({lat:'43.36678229', lng:'141.71624245', time:'2014/08/21 13:50:15', acc_x:'0.2297508', acc_y:'-1.072695', acc_z:'9.638954', speed:'15.48', heading:'335.8474', efficiency:'87', lost_energy:'0.0001492156', consumption_energy:'0.002214952', LINK_ID:''});
+ GPSdata.push({lat:'43.36681272', lng:'141.71621356', time:'2014/08/21 13:50:16', acc_x:'0.4109849', acc_y:'-0.86998', acc_z:'9.474636', speed:'14.04', heading:'325.3873', efficiency:'90', lost_energy:'8.001766E-05', consumption_energy:'-0.0004003961', LINK_ID:''});
+ GPSdata.push({lat:'43.36683228', lng:'141.71617598', time:'2014/08/21 13:50:17', acc_x:'0.6534929', acc_y:'-0.102872', acc_z:'9.188177', speed:'12.96', heading:'305.6015', efficiency:'91', lost_energy:'7.36265E-05', consumption_energy:'-0.0002249087', LINK_ID:''});
+ GPSdata.push({lat:'43.36683908', lng:'141.71613346', time:'2014/08/21 13:50:18', acc_x:'0.3936094', acc_y:'-0.226362', acc_z:'9.467828', speed:'12.6', heading:'282.4067', efficiency:'90', lost_energy:'6.975E-05', consumption_energy:'8.819209E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36683389', lng:'141.7160911', time:'2014/08/21 13:50:19', acc_x:'-0.3746693', acc_y:'-0.1907026', acc_z:'9.983507', speed:'12.6', heading:'260.4335', efficiency:'83', lost_energy:'8.498789E-05', consumption_energy:'0.0002958884', LINK_ID:''});
+ GPSdata.push({lat:'43.36682331', lng:'141.71604971', time:'2014/08/21 13:50:20', acc_x:'-0.3124526', acc_y:'-0.42709', acc_z:'9.672311', speed:'13.32', heading:'250.6274', efficiency:'81', lost_energy:'0.0001173544', consumption_energy:'0.0007374267', LINK_ID:''});
+ GPSdata.push({lat:'43.36680779', lng:'141.7160063', time:'2014/08/21 13:50:21', acc_x:'0.0008930159', acc_y:'0.004376599', acc_z:'9.176843', speed:'15.84', heading:'243.8123', efficiency:'80', lost_energy:'0.0002012118', consumption_energy:'0.002049425', LINK_ID:''});
+ GPSdata.push({lat:'43.36678706', lng:'141.71595385', time:'2014/08/21 13:50:22', acc_x:'-0.2761652', acc_y:'-0.203822', acc_z:'10.71316', speed:'30.96', heading:'241.4684', efficiency:'80', lost_energy:'0.000964117', consumption_energy:'0.0168046', LINK_ID:''});
+ GPSdata.push({lat:'43.36672725', lng:'141.71582391', time:'2014/08/21 13:50:23', acc_x:'-0.2954763', acc_y:'0.3341686', acc_z:'8.901484', speed:'36.72', heading:'237.6597', efficiency:'80', lost_energy:'0.0002517678', consumption_energy:'0.009825106', LINK_ID:''});
+ GPSdata.push({lat:'43.36669392', lng:'141.71573827', time:'2014/08/21 13:50:24', acc_x:'0.2375309', acc_y:'-0.3006758', acc_z:'11.0431', speed:'28.8', heading:'241.8375', efficiency:'88', lost_energy:'0.0005760352', consumption_energy:'-0.004372989', LINK_ID:''});
+ GPSdata.push({lat:'43.36665946', lng:'141.71564997', time:'2014/08/21 13:50:25', acc_x:'-0.3224067', acc_y:'-0.2384674', acc_z:'9.908682', speed:'29.16', heading:'241.7719', efficiency:'81', lost_energy:'0.0001068584', consumption_energy:'0.001225409', LINK_ID:''});
+ GPSdata.push({lat:'43.36662651', lng:'141.71556236', time:'2014/08/21 13:50:26', acc_x:'-0.3159404', acc_y:'-0.332815', acc_z:'10.01281', speed:'28.8', heading:'242.6454', efficiency:'81', lost_energy:'8.03212E-05', consumption_energy:'0.0002836388', LINK_ID:''});
+ GPSdata.push({lat:'43.36659515', lng:'141.71547413', time:'2014/08/21 13:50:27', acc_x:'-0.06666009', acc_y:'-0.03960282', acc_z:'9.033557', speed:'29.52', heading:'243.945', efficiency:'80', lost_energy:'0.0001267716', consumption_energy:'0.001729045', LINK_ID:''});
+ GPSdata.push({lat:'43.36655973', lng:'141.71538116', time:'2014/08/21 13:50:28', acc_x:'0.4290216', acc_y:'-0.02726897', acc_z:'10.39787', speed:'30.96', heading:'242.3425', efficiency:'90', lost_energy:'0.0001162764', consumption_energy:'0.002483022', LINK_ID:''});
+ GPSdata.push({lat:'43.36652533', lng:'141.71528556', time:'2014/08/21 13:50:29', acc_x:'0.3218129', acc_y:'-0.4159353', acc_z:'10.16642', speed:'31.32', heading:'243.6659', efficiency:'90', lost_energy:'9.382641E-05', consumption_energy:'0.001195419', LINK_ID:''});
+ GPSdata.push({lat:'43.36648926', lng:'141.71519046', time:'2014/08/21 13:50:30', acc_x:'0.6171278', acc_y:'-0.07148591', acc_z:'9.870712', speed:'30.24', heading:'242.4476', efficiency:'92', lost_energy:'7.800153E-05', consumption_energy:'-0.0004632543', LINK_ID:''});
+ GPSdata.push({lat:'43.36645611', lng:'141.71510223', time:'2014/08/21 13:50:31', acc_x:'0.6126788', acc_y:'-0.3441457', acc_z:'10.67296', speed:'28.8', heading:'242.6688', efficiency:'92', lost_energy:'8.547085E-05', consumption_energy:'-0.0007714092', LINK_ID:''});
+ GPSdata.push({lat:'43.36642163', lng:'141.71501743', time:'2014/08/21 13:50:32', acc_x:'0.6515578', acc_y:'0.1366244', acc_z:'9.643037', speed:'27.72', heading:'240.7814', efficiency:'92', lost_energy:'7.796691E-05', consumption_energy:'-0.0004339947', LINK_ID:''});
+ GPSdata.push({lat:'43.36638832', lng:'141.71493586', time:'2014/08/21 13:50:33', acc_x:'1.251543', acc_y:'-0.2277514', acc_z:'10.52703', speed:'26.28', heading:'240.676', efficiency:'93', lost_energy:'8.08914E-05', consumption_energy:'-0.0007214942', LINK_ID:''});
+ GPSdata.push({lat:'43.36635883', lng:'141.71485866', time:'2014/08/21 13:50:34', acc_x:'1.73337', acc_y:'0.2653462', acc_z:'11.06525', speed:'24.84', heading:'242.2801', efficiency:'93', lost_energy:'8.154119E-05', consumption_energy:'-0.0006872842', LINK_ID:''});
+ GPSdata.push({lat:'43.36633179', lng:'141.71478554', time:'2014/08/21 13:50:35', acc_x:'1.610077', acc_y:'0.2596918', acc_z:'9.640745', speed:'23.04', heading:'243.0383', efficiency:'93', lost_energy:'8.519655E-05', consumption_energy:'-0.0009128613', LINK_ID:''});
+ GPSdata.push({lat:'43.36631321', lng:'141.71471316', time:'2014/08/21 13:50:36', acc_x:'1.026827', acc_y:'0.2997351', acc_z:'10.16078', speed:'18', heading:'250.5516', efficiency:'92', lost_energy:'0.0001196809', consumption_energy:'-0.002805171', LINK_ID:''});
+ GPSdata.push({lat:'43.36629887', lng:'141.71467031', time:'2014/08/21 13:50:37', acc_x:'0.7215784', acc_y:'0.6311293', acc_z:'9.618932', speed:'14.76', heading:'245.2816', efficiency:'92', lost_energy:'0.0001230173', consumption_energy:'-0.001351386', LINK_ID:''});
+ GPSdata.push({lat:'43.36628869', lng:'141.71461806', time:'2014/08/21 13:50:38', acc_x:'0.559205', acc_y:'0.4233384', acc_z:'9.802639', speed:'15.84', heading:'254.9971', efficiency:'91', lost_energy:'9.853351E-05', consumption_energy:'0.0009990454', LINK_ID:''});
+ GPSdata.push({lat:'43.36627797', lng:'141.71456497', time:'2014/08/21 13:50:39', acc_x:'0.4086924', acc_y:'0.30449', acc_z:'9.802454', speed:'14.04', heading:'254.4772', efficiency:'90', lost_energy:'7.998502E-05', consumption_energy:'-0.0005658289', LINK_ID:''});
+ GPSdata.push({lat:'43.36630523', lng:'141.71457906', time:'2014/08/21 13:50:40', acc_x:'0.7038074', acc_y:'0.1893586', acc_z:'10.32015', speed:'9.36', heading:'20.59405', efficiency:'90', lost_energy:'0.0001315384', consumption_energy:'-0.001453522', LINK_ID:''});
+ GPSdata.push({lat:'43.36631423', lng:'141.7145587', time:'2014/08/21 13:50:41', acc_x:'0.6158099', acc_y:'0.2316716', acc_z:'10.14953', speed:'6.12', heading:'301.3019', efficiency:'85', lost_energy:'0.0004460532', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36632506', lng:'141.7145466', time:'2014/08/21 13:50:42', acc_x:'0.6949369', acc_y:'-0.1429347', acc_z:'9.520342', speed:'6.12', heading:'320.9155', efficiency:'85', lost_energy:'8.90853E-05', consumption_energy:'0.0001382866', LINK_ID:''});
+ GPSdata.push({lat:'43.36633715', lng:'141.71453114', time:'2014/08/21 13:50:43', acc_x:'1.847564', acc_y:'-0.300514', acc_z:'9.832939', speed:'5.76', heading:'317.0889', efficiency:'85', lost_energy:'6.129013E-05', consumption_energy:'3.919618E-05', LINK_ID:''});
+ GPSdata.push({lat:'43.36634585', lng:'141.7145413', time:'2014/08/21 13:50:44', acc_x:'0.8850628', acc_y:'-0.1710426', acc_z:'9.623311', speed:'2.88', heading:'40.33048', efficiency:'80', lost_energy:'0.0003362751', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634539', lng:'141.71454424', time:'2014/08/21 13:50:45', acc_x:'0.6282262', acc_y:'-0.2886122', acc_z:'9.894676', speed:'0.72', heading:'40.33048', efficiency:'80', lost_energy:'0.0005475141', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634725', lng:'141.71454453', time:'2014/08/21 13:50:46', acc_x:'0.1075782', acc_y:'-0.2333833', acc_z:'9.793474', speed:'0.36', heading:'40.33048', efficiency:'80', lost_energy:'3.208026E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634722', lng:'141.71454455', time:'2014/08/21 13:50:47', acc_x:'0.03233536', acc_y:'-0.2787743', acc_z:'9.923536', speed:'0.36', heading:'40.33048', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634575', lng:'141.71454491', time:'2014/08/21 13:50:48', acc_x:'-0.07272004', acc_y:'-0.004192662', acc_z:'9.817353', speed:'0.72', heading:'40.33048', efficiency:'80', lost_energy:'1.269987E-05', consumption_energy:'8.778948E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634478', lng:'141.71454685', time:'2014/08/21 13:50:49', acc_x:'-0.3352361', acc_y:'-0.2265546', acc_z:'9.891898', speed:'0.36', heading:'40.33048', efficiency:'80', lost_energy:'3.499957E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634447', lng:'141.71454701', time:'2014/08/21 13:50:50', acc_x:'-0.2120835', acc_y:'-0.1753195', acc_z:'9.864751', speed:'0.36', heading:'40.33048', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663452', lng:'141.71454477', time:'2014/08/21 13:50:51', acc_x:'-0.1274409', acc_y:'-0.06852413', acc_z:'9.803704', speed:'0.72', heading:'40.33048', efficiency:'80', lost_energy:'1.059547E-05', consumption_energy:'8.778948E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634532', lng:'141.71454123', time:'2014/08/21 13:50:52', acc_x:'-0.1848139', acc_y:'0.07860447', acc_z:'9.798125', speed:'0.72', heading:'272.6697', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634468', lng:'141.71454304', time:'2014/08/21 13:50:53', acc_x:'-0.4936391', acc_y:'-0.07215168', acc_z:'9.860221', speed:'0.72', heading:'272.6697', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634739', lng:'141.71454154', time:'2014/08/21 13:50:54', acc_x:'-0.281352', acc_y:'-0.0842707', acc_z:'9.797691', speed:'0.72', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634678', lng:'141.71454206', time:'2014/08/21 13:50:55', acc_x:'-0.008902736', acc_y:'-0.08911908', acc_z:'9.789768', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'8.360012E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634673', lng:'141.71454236', time:'2014/08/21 13:50:56', acc_x:'-0.01364347', acc_y:'-0.100148', acc_z:'9.813273', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'8.916367E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634687', lng:'141.71454176', time:'2014/08/21 13:50:57', acc_x:'0.02087952', acc_y:'-0.08970632', acc_z:'9.834017', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634686', lng:'141.7145414', time:'2014/08/21 13:50:58', acc_x:'-0.03721255', acc_y:'-0.09561592', acc_z:'9.806804', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634689', lng:'141.71454128', time:'2014/08/21 13:50:59', acc_x:'0.0757365', acc_y:'-0.0926166', acc_z:'9.832781', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634645', lng:'141.71454124', time:'2014/08/21 13:51:00', acc_x:'-0.02089199', acc_y:'-0.09680996', acc_z:'9.803063', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'1.433551E-05', consumption_energy:'2.926316E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634596', lng:'141.71454115', time:'2014/08/21 13:51:01', acc_x:'0.01008825', acc_y:'-0.09079962', acc_z:'9.844337', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'4.049119E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634597', lng:'141.71454115', time:'2014/08/21 13:51:02', acc_x:'-0.007344945', acc_y:'-0.08802076', acc_z:'9.827948', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634597', lng:'141.71454126', time:'2014/08/21 13:51:03', acc_x:'0.003344888', acc_y:'-0.09431608', acc_z:'9.821084', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634593', lng:'141.71454126', time:'2014/08/21 13:51:04', acc_x:'0.009814697', acc_y:'-0.09652071', acc_z:'9.808681', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634593', lng:'141.71454136', time:'2014/08/21 13:51:05', acc_x:'-0.02085496', acc_y:'-0.08421441', acc_z:'9.785315', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663459', lng:'141.71454116', time:'2014/08/21 13:51:06', acc_x:'-0.02477372', acc_y:'-0.07791113', acc_z:'9.844327', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634591', lng:'141.71454128', time:'2014/08/21 13:51:07', acc_x:'0.1285549', acc_y:'-0.009112379', acc_z:'9.583111', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634591', lng:'141.7145413', time:'2014/08/21 13:51:08', acc_x:'-0.5070444', acc_y:'0.03070403', acc_z:'9.916953', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663459', lng:'141.71454132', time:'2014/08/21 13:51:09', acc_x:'0.05122405', acc_y:'-0.1411006', acc_z:'9.986499', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634591', lng:'141.71454134', time:'2014/08/21 13:51:10', acc_x:'-0.04684703', acc_y:'-0.08369387', acc_z:'9.848366', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634591', lng:'141.71454135', time:'2014/08/21 13:51:11', acc_x:'-0.01137019', acc_y:'-0.07971698', acc_z:'9.794177', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634585', lng:'141.71454136', time:'2014/08/21 13:51:12', acc_x:'-0.01473636', acc_y:'-0.0844371', acc_z:'9.795384', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634584', lng:'141.71454135', time:'2014/08/21 13:51:13', acc_x:'-0.01097661', acc_y:'-0.07222384', acc_z:'9.790529', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634583', lng:'141.71454136', time:'2014/08/21 13:51:14', acc_x:'0.00142151', acc_y:'-0.08973686', acc_z:'9.796367', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634584', lng:'141.71454135', time:'2014/08/21 13:51:15', acc_x:'0.00291047', acc_y:'-0.09004997', acc_z:'9.833646', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634583', lng:'141.71454135', time:'2014/08/21 13:51:16', acc_x:'-0.002175811', acc_y:'-0.09307261', acc_z:'9.813416', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634583', lng:'141.71454134', time:'2014/08/21 13:51:17', acc_x:'0.00842985', acc_y:'-0.08785443', acc_z:'9.817537', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634582', lng:'141.71454135', time:'2014/08/21 13:51:18', acc_x:'0.003473734', acc_y:'-0.08372479', acc_z:'9.818668', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634581', lng:'141.71454137', time:'2014/08/21 13:51:19', acc_x:'0.0002433445', acc_y:'-0.08691811', acc_z:'9.799302', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634581', lng:'141.71454139', time:'2014/08/21 13:51:20', acc_x:'-0.01344201', acc_y:'-0.0939', acc_z:'9.800422', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634579', lng:'141.71454139', time:'2014/08/21 13:51:21', acc_x:'0.002071176', acc_y:'-0.08735327', acc_z:'9.824187', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634577', lng:'141.71454141', time:'2014/08/21 13:51:22', acc_x:'-0.005694973', acc_y:'-0.09518932', acc_z:'9.820291', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634577', lng:'141.71454142', time:'2014/08/21 13:51:24', acc_x:'-0.0007574542', acc_y:'-0.08607449', acc_z:'9.823697', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634576', lng:'141.71454141', time:'2014/08/21 13:51:25', acc_x:'0.0003158142', acc_y:'-0.08647749', acc_z:'9.831858', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634574', lng:'141.71454143', time:'2014/08/21 13:51:26', acc_x:'-0.05707324', acc_y:'-0.1928253', acc_z:'9.908435', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454144', time:'2014/08/21 13:51:27', acc_x:'-0.0135381', acc_y:'-0.07641389', acc_z:'9.830132', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454143', time:'2014/08/21 13:51:28', acc_x:'-0.0154037', acc_y:'-0.08403102', acc_z:'9.827521', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454144', time:'2014/08/21 13:51:29', acc_x:'-0.01079788', acc_y:'-0.08622915', acc_z:'9.819086', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454145', time:'2014/08/21 13:51:31', acc_x:'0.0005350083', acc_y:'-0.0807171', acc_z:'9.820249', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454144', time:'2014/08/21 13:51:32', acc_x:'0.005121931', acc_y:'-0.08017338', acc_z:'9.818721', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634573', lng:'141.71454143', time:'2014/08/21 13:51:33', acc_x:'-0.00915919', acc_y:'-0.08435645', acc_z:'9.821095', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634499', lng:'141.71454151', time:'2014/08/21 13:51:39', acc_x:'-0.009918577', acc_y:'-0.07790828', acc_z:'9.818161', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'8.757833E-06', consumption_energy:'2.926316E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634591', lng:'141.71454145', time:'2014/08/21 13:51:40', acc_x:'-0.01366623', acc_y:'-0.08032048', acc_z:'9.817031', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634535', lng:'141.71454152', time:'2014/08/21 13:51:41', acc_x:'-0.007401033', acc_y:'-0.08356568', acc_z:'9.826211', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'3.559875E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634542', lng:'141.71454142', time:'2014/08/21 13:51:42', acc_x:'-0.008741617', acc_y:'-0.08491473', acc_z:'9.819234', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663457', lng:'141.71454128', time:'2014/08/21 13:51:43', acc_x:'-0.01258133', acc_y:'-0.08281347', acc_z:'9.817339', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'2.120963E-05', consumption_energy:'2.926316E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634638', lng:'141.71454145', time:'2014/08/21 13:51:44', acc_x:'0.006770021', acc_y:'-0.08133284', acc_z:'9.820017', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634666', lng:'141.71454143', time:'2014/08/21 13:51:45', acc_x:'-0.01780458', acc_y:'-0.08459932', acc_z:'9.823503', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'7.139607E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634648', lng:'141.71454137', time:'2014/08/21 13:51:46', acc_x:'-0.001922333', acc_y:'-0.08233013', acc_z:'9.829266', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'3.412475E-05', consumption_energy:'2.926316E-06', LINK_ID:''});
+ GPSdata.push({lat:'43.36634744', lng:'141.7145414', time:'2014/08/21 13:51:47', acc_x:'-0.000145803', acc_y:'-0.08576914', acc_z:'9.817389', speed:'0.36', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634786', lng:'141.71454131', time:'2014/08/21 13:51:48', acc_x:'-0.01170764', acc_y:'-0.08127061', acc_z:'9.828959', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'4.708998E-05', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663478', lng:'141.71454132', time:'2014/08/21 13:51:49', acc_x:'0.005340994', acc_y:'-0.08121268', acc_z:'9.826305', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634769', lng:'141.71454135', time:'2014/08/21 13:51:50', acc_x:'-0.01110595', acc_y:'-0.08303285', acc_z:'9.820011', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634772', lng:'141.71454135', time:'2014/08/21 13:51:51', acc_x:'0.001790624', acc_y:'-0.08024109', acc_z:'9.817715', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634768', lng:'141.71454137', time:'2014/08/21 13:51:52', acc_x:'-0.0009445954', acc_y:'-0.08192314', acc_z:'9.825802', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663477', lng:'141.71454139', time:'2014/08/21 13:51:53', acc_x:'0.01011018', acc_y:'-0.0820823', acc_z:'9.827049', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663477', lng:'141.71454142', time:'2014/08/21 13:51:54', acc_x:'-0.008053357', acc_y:'-0.0822579', acc_z:'9.823993', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634769', lng:'141.71454146', time:'2014/08/21 13:51:55', acc_x:'0.02155645', acc_y:'-0.08204243', acc_z:'9.816563', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663477', lng:'141.71454149', time:'2014/08/21 13:51:56', acc_x:'-0.003553018', acc_y:'-0.08352938', acc_z:'9.820095', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634771', lng:'141.71454151', time:'2014/08/21 13:51:57', acc_x:'0.01379994', acc_y:'-0.08260486', acc_z:'9.818954', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634772', lng:'141.71454155', time:'2014/08/21 13:51:58', acc_x:'-0.009387142', acc_y:'-0.0833801', acc_z:'9.835623', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634771', lng:'141.71454156', time:'2014/08/21 13:51:59', acc_x:'-0.002966589', acc_y:'-0.08610922', acc_z:'9.822705', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634772', lng:'141.71454161', time:'2014/08/21 13:52:00', acc_x:'0.007110385', acc_y:'-0.08328823', acc_z:'9.819663', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634772', lng:'141.7145416', time:'2014/08/21 13:52:01', acc_x:'-0.003090308', acc_y:'-0.08887123', acc_z:'9.816101', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634771', lng:'141.71454161', time:'2014/08/21 13:52:02', acc_x:'0.0148303', acc_y:'-0.08612376', acc_z:'9.814258', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663477', lng:'141.71454161', time:'2014/08/21 13:52:03', acc_x:'0.004421251', acc_y:'-0.08352809', acc_z:'9.816154', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.3663477', lng:'141.7145416', time:'2014/08/21 13:52:04', acc_x:'-0.009035', acc_y:'-0.08282967', acc_z:'9.829848', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634765', lng:'141.71454178', time:'2014/08/21 13:52:05', acc_x:'0.006495535', acc_y:'-0.08485314', acc_z:'9.823151', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634765', lng:'141.7145418', time:'2014/08/21 13:52:06', acc_x:'-0.01032518', acc_y:'-0.08397274', acc_z:'9.82208', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634761', lng:'141.71454198', time:'2014/08/21 13:52:07', acc_x:'-0.001558702', acc_y:'-0.0878524', acc_z:'9.827457', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634762', lng:'141.71454188', time:'2014/08/21 13:52:08', acc_x:'0.008542306', acc_y:'-0.0905011', acc_z:'9.827578', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634755', lng:'141.71454203', time:'2014/08/21 13:52:09', acc_x:'0.003546709', acc_y:'-0.0856242', acc_z:'9.816271', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634751', lng:'141.71454215', time:'2014/08/21 13:52:10', acc_x:'-0.005179121', acc_y:'-0.07510551', acc_z:'9.830729', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634766', lng:'141.71454184', time:'2014/08/21 13:52:11', acc_x:'0.001728631', acc_y:'-0.0814888', acc_z:'9.823077', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634767', lng:'141.71454183', time:'2014/08/21 13:52:12', acc_x:'-0.00939092', acc_y:'-0.07832434', acc_z:'9.823348', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634763', lng:'141.71454191', time:'2014/08/21 13:52:13', acc_x:'-0.01232495', acc_y:'-0.08813771', acc_z:'9.815456', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634763', lng:'141.71454188', time:'2014/08/21 13:52:14', acc_x:'0.008327135', acc_y:'-0.0788701', acc_z:'9.820319', speed:'0', heading:'338.0808', efficiency:'80', lost_energy:'0', consumption_energy:'0', LINK_ID:''});
+ GPSdata.push({lat:'43.36634758', lng:'141.71454192', time:'2014/08/21 13:52:15', acc_x:'-0.01090658', acc_y:'-0.08512033', acc_z:'9.814308', speed:'0.02315496', heading:'338.0808', efficiency:'80', lost_energy:'4.517248E-07', consumption_energy:'1.21061E-08', LINK_ID:''});
+ 
+ var paths =	new Array();
+ for (var i = 0; i < GPSdata.length; i++){
+ var point = new google.maps.LatLng(GPSdata[i].lat,GPSdata[i].lng);
+   paths.push(point);
+   }
+    var poly = new google.maps.Polyline({
+      path: paths,
+      strokeWeight: 3,
+      strokeOpacity: 0.7,
+      strokeColor: "#FF0000"
+    });
+ 
+    poly.setMap(map);
+ 
+ var image_red = new google.maps.MarkerImage('../../image/icon_red.gif',
+     new google.maps.Size(15, 15),
+     new google.maps.Point(0, 0),
+     new google.maps.Point(7, 7));
+ var image_blue = new google.maps.MarkerImage('../../image/icon_blue.gif',
+     new google.maps.Size(15, 15),
+     new google.maps.Point(0, 0),
+     new google.maps.Point(7, 7));
+ var image_white = new google.maps.MarkerImage('../../image/icon_white.gif',
+     new google.maps.Size(15, 15),
+     new google.maps.Point(0, 0),
+     new google.maps.Point(7, 7));
+ var markers = new Array();
+ for (i = 0; i < GPSdata.length; i += 1) {
+     if(GPSdata[i].efficiency >= 94){
+         markers[i] = new google.maps.Marker({
+         position: new google.maps.LatLng(GPSdata[i].lat, GPSdata[i].lng),
+         map: map
+         ,icon: image_blue
+         });
+     }else if(GPSdata[i].efficiency > 80){
+         markers[i] = new google.maps.Marker({
+         position: new google.maps.LatLng(GPSdata[i].lat, GPSdata[i].lng),
+         map: map
+         ,icon: image_white
+         });
+     }else{
+         markers[i] = new google.maps.Marker({
+         position: new google.maps.LatLng(GPSdata[i].lat, GPSdata[i].lng),
+         map: map
+         ,icon: image_red
+         });
+     }
+ dispInfo(markers[i],GPSdata[i].time,GPSdata[i].acc_x,GPSdata[i].acc_y,GPSdata[i].acc_z,GPSdata[i].speed,GPSdata[i].heading,GPSdata[i].efficiency,GPSdata[i].consumption_energy,GPSdata[i].lost_energy,GPSdata[i].LINK_ID); 
+ }
+ function dispInfo(marker,time, acc_x,acc_y,acc_z,speed,heading,efficiency,consumption_energy,lost_energy,aggregation) {
+     google.maps.event.addListener(marker, 'click', function(event) {
+         var string = " time : " + time + "<br> longitudinal_acc : " + acc_x + "<br> lateral_acc : " + acc_y+ "<br> vertical_z : " + acc_z+ "<br> speed : " + speed+ "<br> heading : " + heading+ "<br> efficiency : " + efficiency + "<br> consumption_energy : " + consumption_energy + "<br> lost_energy : " + lost_energy + "<br> LINK_ID : " + aggregation + "<br>";
+         new google.maps.InfoWindow({content:string,disableAutoPan: true}).open(marker.getMap(), marker);
+         window.external.IconClick(time, acc_x,acc_y,acc_z,speed,consumption_energy,lost_energy);
+     });
+     google.maps.event.addListener(marker, 'rightclick', function(event) {
+         window.external.IconRightClick(time);
+     });
+ }
+image_center = new google.maps.MarkerImage('../../image/center_marker.gif', new google.maps.Size(25, 25), new google.maps.Point(0, 0), new google.maps.Point(12, 12));
+
+center_marker = new google.maps.Marker({position: map.getCenter(), icon: image_center, zIndex: 400});
+center_marker.setMap(map);
+
+}
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+<div id="map" style="width: 480; height: 360;"></div>
+</body>
+</html>
