@@ -150,7 +150,8 @@
             this.Server_textBox.Name = "Server_textBox";
             this.Server_textBox.Size = new System.Drawing.Size(167, 19);
             this.Server_textBox.TabIndex = 15;
-            this.Server_textBox.Text = "ECOLOGDB";
+            this.Server_textBox.Text = "ECOLOGDB2016";
+            this.Server_textBox.TextChanged += new System.EventHandler(this.Server_textBox_TextChanged);
             // 
             // LoginDialog
             // 

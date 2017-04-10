@@ -101,5 +101,10 @@ namespace ECOLOGViewerver2
                 PasswordTextBox.Enabled = false;
             }
         }
+
+        private void Server_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

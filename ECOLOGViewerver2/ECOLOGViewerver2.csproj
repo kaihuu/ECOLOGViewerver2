@@ -206,6 +206,9 @@
       <DependentUpon>V2XDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="WriteLog.cs" />
+    <EmbeddedResource Include="LoginDialog.resx">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
