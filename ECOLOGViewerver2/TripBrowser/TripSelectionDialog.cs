@@ -109,12 +109,15 @@ namespace ECOLOGViewerver2
             SensorcomboBox.SelectedIndex = 0;
             DirectioncomboBox.SelectedIndex = 0;
             InfocomboBox.SelectedIndex = 0;
+            ECOLOGTable_comboBox.SelectedIndex = 0;
 
             this.InfocomboBox.SelectedIndexChanged += new System.EventHandler(this.InfocomboBox_SelectedIndexChanged);
             this.DirectioncomboBox.SelectedIndexChanged += new System.EventHandler(this.DirectioncomboBox_SelectedIndexChanged);
             this.DrivercomboBox.SelectedIndexChanged += new System.EventHandler(this.drivercomboBox_SelectedIndexChanged);
             this.SensorcomboBox.SelectedIndexChanged += new System.EventHandler(this.sensorcomboBox_SelectedIndexChanged);
             this.CarcomboBox.SelectedIndexChanged += new System.EventHandler(this.carcomboBox_SelectedIndexChanged);
+            this.ECOLOGTable_comboBox.SelectedIndexChanged += new System.EventHandler(this.ECOLOGTable_comboBox_SelectedIndexChanged);
+
             #endregion
 
             select_trajectory();
@@ -221,7 +224,7 @@ namespace ECOLOGViewerver2
             }
 
             query += "order by START_TIME desc ";
-
+            query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
             if (useFixed_checkBox.Checked)
             {
                 query = query.Replace("ECOLOG", "ECOLOG_ALTITUDE_FIXED");
@@ -352,7 +355,7 @@ namespace ECOLOGViewerver2
             //Program.ECOLOGTable = ECOLOGTable_textBox.Text;
             MainForm.ECOLOGTable = ECOLOGTable_comboBox.Text;
 
-            user.currentDirectory = System.Environment.CurrentDirectory + @"\Log\[" + user.tripID + ", " + user.value + ", " + user.polyline + "]";
+            user.currentDirectory = System.Environment.CurrentDirectory + @"\Log" + @"\"+ ECOLOGTable_comboBox.Text + "[" + user.tripID + ", " + user.value + ", " + user.polyline + "]";
             #endregion
 
             if (Marker_checkBox.Checked)
@@ -652,6 +655,9 @@ namespace ECOLOGViewerver2
             select_trajectory();
         }
 
-
+        private void ECOLOGTable_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            select_trajectory();
+        }
     }
 }

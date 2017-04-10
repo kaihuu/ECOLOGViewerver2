@@ -30,6 +30,7 @@
         {
             this.Cancelbutton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.demoCheckBox = new System.Windows.Forms.CheckBox();
             this.LeafSpy_checkBox = new System.Windows.Forms.CheckBox();
             this.ConsumedEnergycheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.CarcomboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.demoCheckBox = new System.Windows.Forms.CheckBox();
             this.ECOLOGTable_comboBox = new System.Windows.Forms.ComboBox();
             this.LeafSpycheckBox = new System.Windows.Forms.CheckBox();
             this.EditQuerycheckBox = new System.Windows.Forms.CheckBox();
@@ -100,6 +100,17 @@
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trip Search";
+            // 
+            // demoCheckBox
+            // 
+            this.demoCheckBox.AutoSize = true;
+            this.demoCheckBox.Location = new System.Drawing.Point(737, 21);
+            this.demoCheckBox.Name = "demoCheckBox";
+            this.demoCheckBox.Size = new System.Drawing.Size(53, 16);
+            this.demoCheckBox.TabIndex = 122;
+            this.demoCheckBox.Text = "Demo";
+            this.demoCheckBox.UseVisualStyleBackColor = true;
+            this.demoCheckBox.CheckedChanged += new System.EventHandler(this.demoCheckBox_CheckedChanged);
             // 
             // LeafSpy_checkBox
             // 
@@ -251,30 +262,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Settings";
             // 
-            // demoCheckBox
-            // 
-            this.demoCheckBox.AutoSize = true;
-            this.demoCheckBox.Location = new System.Drawing.Point(737, 21);
-            this.demoCheckBox.Name = "demoCheckBox";
-            this.demoCheckBox.Size = new System.Drawing.Size(53, 16);
-            this.demoCheckBox.TabIndex = 122;
-            this.demoCheckBox.Text = "Demo";
-            this.demoCheckBox.UseVisualStyleBackColor = true;
-            this.demoCheckBox.CheckedChanged += new System.EventHandler(this.demoCheckBox_CheckedChanged);
-            // 
             // ECOLOGTable_comboBox
             // 
             this.ECOLOGTable_comboBox.FormattingEnabled = true;
             this.ECOLOGTable_comboBox.Items.AddRange(new object[] {
-            "ECOLOG",
-            "ECOLOG_ALTITUDE_FROM_LINKS",
-            "ECOLOG_EXPERIMENT",
-            "ECOLOG_TEMP"});
+            "ECOLOG_LINKS_LOOKUP",
+            "ECOLOG_MM_LINKS_LOOKUP",
+            "ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP"});
             this.ECOLOGTable_comboBox.Location = new System.Drawing.Point(563, 59);
             this.ECOLOGTable_comboBox.Name = "ECOLOGTable_comboBox";
             this.ECOLOGTable_comboBox.Size = new System.Drawing.Size(147, 20);
             this.ECOLOGTable_comboBox.TabIndex = 63;
-            this.ECOLOGTable_comboBox.Text = "ECOLOG";
+
             // 
             // LeafSpycheckBox
             // 
