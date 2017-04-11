@@ -207,10 +207,10 @@ namespace ECOLOGViewerver2
             }
             #endregion
 
-            calendar.addData(dt_calendar);
-            calendar.AutoScrollMargin = new System.Drawing.Size(0, 30);
-            calendar.Text = "Calendar of Consumed Energy [" + Year + "/" + Month + "]";
-            MainForm.ShowWindow(calendar);
+        //    calendar.addData(dt_calendar);
+        //    calendar.AutoScrollMargin = new System.Drawing.Size(0, 30);
+         //   calendar.Text = "Calendar of Consumed Energy [" + Year + "/" + Month + "]";
+         //   MainForm.ShowWindow(calendar);
 
         }
         private void CalendarDialog_KeyDown(object sender, KeyEventArgs e)
