@@ -48,12 +48,12 @@ namespace ECOLOGViewerver2
             {
                 if (Domain_checkBox.Checked)
                 {
-                    connectionString = "Data Source=" + Server_textBox.Text + ";Initial Catalog=ECOLOGDBver2;Integrated Security=No;User Id="
+                    connectionString = "Data Source=" + Server_textBox.Text + ";Initial Catalog=ECOLOGDBver3;Integrated Security=No;User Id="
                         + UsernameTextBox.Text + ";Password=" + PasswordTextBox.Text + " ;Connect Timeout=15;";
                 }
                 else
                 {
-                    connectionString = "Data Source=" + Server_textBox.Text + ";Initial Catalog=ECOLOGDBver2;Integrated Security=Yes;Connect Timeout=15;";
+                    connectionString = "Data Source=" + Server_textBox.Text + ";Initial Catalog=ECOLOGDBver3;Integrated Security=Yes;Connect Timeout=15;";
 
                 }
 

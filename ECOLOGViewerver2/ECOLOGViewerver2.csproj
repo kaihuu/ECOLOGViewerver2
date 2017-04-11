@@ -61,6 +61,7 @@
     <Compile Include="Annotation\EasyBrowser.Designer.cs">
       <DependentUpon>EasyBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBName.cs" />
     <Compile Include="HistoryGraph\HistoryGraphDialog.cs">
       <SubType>Form</SubType>
     </Compile>

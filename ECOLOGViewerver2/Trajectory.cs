@@ -340,7 +340,7 @@ namespace ECOLOGViewerver2
                         query = form.GetQuery();
                     }
                 }
-
+                query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
                 dt = DatabaseAccess.GetResult(query);
                 #endregion
 
@@ -1174,7 +1174,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_large.png";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_large = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_large = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1182,7 +1182,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_normal.png";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_normal = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_normal = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1190,7 +1190,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_small.png";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_small = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_small = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1226,7 +1226,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_red.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_red = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_red = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1234,7 +1234,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_blue.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_blue = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_blue = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1242,7 +1242,7 @@ namespace ECOLOGViewerver2
                         image_work_src = "image/icon_white.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
-                        sb.Append(" var image_white = new google.maps.MarkerImage('../../" + image_work_src + "',\r\n");
+                        sb.Append(" var image_white = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
                         sb.Append("     new google.maps.Size(" + image_work.Width + ", " + image_work.Height + "),\r\n");
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
@@ -1319,7 +1319,7 @@ namespace ECOLOGViewerver2
                 #endregion
 
                 #region ボトム部
-                sb.Append("image_center = new google.maps.MarkerImage('../../image/center_marker.gif', new google.maps.Size(25, 25), new google.maps.Point(0, 0), new google.maps.Point(12, 12));\r\n");
+                sb.Append("image_center = new google.maps.MarkerImage('../../../image/center_marker.gif', new google.maps.Size(25, 25), new google.maps.Point(0, 0), new google.maps.Point(12, 12));\r\n");
                 sb.Append("\r\n");
                 sb.Append("center_marker = new google.maps.Marker({position: map.getCenter(), icon: image_center, zIndex: 400});\r\n");
                 sb.Append("center_marker.setMap(map);\r\n");

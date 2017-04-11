@@ -119,13 +119,15 @@ namespace ECOLOGViewerver2
             this.ECOLOGTable_comboBox.SelectedIndexChanged += new System.EventHandler(this.ECOLOGTable_comboBox_SelectedIndexChanged);
 
             #endregion
-
+           
             select_trajectory();
 
         }
         // トリップ検索
         private void select_trajectory()
         {
+            MainForm.ECOLOGTable = ECOLOGTable_comboBox.Text;
+
             #region クエリ
             string query = "";
 
@@ -224,6 +226,17 @@ namespace ECOLOGViewerver2
             }
 
             query += "order by START_TIME desc ";
+
+            string tripsTable = DBName.trips;
+            if (MainForm.ECOLOGTable == "ECOLOG_MM_LINKS_LOOKUP")
+            {
+                tripsTable = DBName.trips_mm;
+            }
+            else if (MainForm.ECOLOGTable == "ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP")
+            {
+                tripsTable = DBName.trips_lpf_mm;
+            }
+            query = query.Replace("TRIPS", tripsTable);
             query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
             if (useFixed_checkBox.Checked)
             {
@@ -355,7 +368,7 @@ namespace ECOLOGViewerver2
             //Program.ECOLOGTable = ECOLOGTable_textBox.Text;
             MainForm.ECOLOGTable = ECOLOGTable_comboBox.Text;
 
-            user.currentDirectory = System.Environment.CurrentDirectory + @"\Log" + @"\"+ ECOLOGTable_comboBox.Text + "[" + user.tripID + ", " + user.value + ", " + user.polyline + "]";
+            user.currentDirectory = System.Environment.CurrentDirectory + @"\Log" + @"\"+ ECOLOGTable_comboBox.Text + @"\[" + user.tripID + ", " + user.value + ", " + user.polyline + "]";
             #endregion
 
             if (Marker_checkBox.Checked)

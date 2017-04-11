@@ -484,6 +484,8 @@ namespace ECOLOGViewerver2
             query += "where ECOLOG.TRIP_ID = " + user.tripID + " ";
             query += "order by ECOLOG.JST ";
 
+
+
             query = query.Replace("[ECOLOGTable]", MainForm.ECOLOGTable);
 
             if (user.usefixed)
