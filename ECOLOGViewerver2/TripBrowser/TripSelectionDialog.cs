@@ -232,7 +232,7 @@ namespace ECOLOGViewerver2
             {
                 tripsTable = DBName.trips_mm;
             }
-            else if (MainForm.ECOLOGTable == "ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP")
+            else if (MainForm.ECOLOGTable == "[ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP]")
             {
                 tripsTable = DBName.trips_lpf_mm;
             }
