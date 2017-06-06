@@ -1223,7 +1223,7 @@ namespace ECOLOGViewerver2
                     else
                     {
                         #region マーカーの色でモーター効率を表す
-                        image_work_src = "image/icon_red.gif";
+                        image_work_src = "../../image/icon_red.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
                         sb.Append(" var image_red = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
@@ -1231,7 +1231,7 @@ namespace ECOLOGViewerver2
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
 
-                        image_work_src = "image/icon_blue.gif";
+                        image_work_src = "../../image/icon_blue.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
                         sb.Append(" var image_blue = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
@@ -1239,7 +1239,7 @@ namespace ECOLOGViewerver2
                         sb.Append("     new google.maps.Point(0, 0),\r\n");
                         sb.Append("     new google.maps.Point(" + image_work.Width / 2 + ", " + image_work.Height / 2 + "));\r\n");
 
-                        image_work_src = "image/icon_white.gif";
+                        image_work_src = "../../image/icon_white.gif";
                         image_work = new System.Drawing.Bitmap(image_work_src);
 
                         sb.Append(" var image_white = new google.maps.MarkerImage('../../../" + image_work_src + "',\r\n");
