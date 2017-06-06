@@ -203,7 +203,8 @@ namespace ECOLOGViewerver2
                 }
                 else
                 {
-                    pictureBoxImage.ImageLocation = System.Environment.CurrentDirectory + "/Image/noimage.gif";
+                    //pictureBoxImage.ImageLocation = System.Environment.CurrentDirectory + "/Image/noimage.gif";
+                    pictureBoxImage.ImageLocation = "../../Image/noimage.gif";
 
                 }
                 //時刻表示
