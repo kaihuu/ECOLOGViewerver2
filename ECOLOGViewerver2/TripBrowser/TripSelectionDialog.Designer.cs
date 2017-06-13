@@ -266,7 +266,7 @@
             // 
             this.ECOLOGTable_comboBox.FormattingEnabled = true;
             this.ECOLOGTable_comboBox.Items.AddRange(new object[] {
-            "ECOLOG_LINKS_LOOKUP",
+            "ECOLOG_FOR_USE",
             "ECOLOG_MM_LINKS_LOOKUP",
             "[ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP]"});
             this.ECOLOGTable_comboBox.Location = new System.Drawing.Point(563, 59);
