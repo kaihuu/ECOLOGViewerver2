@@ -1278,10 +1278,10 @@ namespace ECOLOGViewerver2
                     sb.Append("     google.maps.event.addListener(marker, 'click', function(event) {\r\n");
                     sb.Append("         var string = \" time : \" + time + \"<br> longitudinal_acc : \" + acc_x + \"<br> lateral_acc : \" + acc_y+ \"<br> vertical_z : \" + acc_z+ \"<br> speed : \" + speed+ \"<br> heading : \" + heading+ \"<br> efficiency : \" + efficiency + \"<br> consumption_energy : \" + consumption_energy + \"<br> lost_energy : \" + lost_energy + \"<br> " + user.aggregation + " : \" + aggregation + \"<br>\";\r\n");
                     sb.Append("         new google.maps.InfoWindow({content:string,disableAutoPan: true}).open(marker.getMap(), marker);\r\n");
-                    sb.Append("         window.external.IconClick(time, acc_x,acc_y,acc_z,speed,consumption_energy,lost_energy);\r\n");
+                    sb.Append("         //window.external.IconClick(time, acc_x,acc_y,acc_z,speed,consumption_energy,lost_energy);\r\n");
                     sb.Append("     });\r\n");
                     sb.Append("     google.maps.event.addListener(marker, 'rightclick', function(event) {\r\n");
-                    sb.Append("         window.external.IconRightClick(time);\r\n");
+                    sb.Append("         //window.external.IconRightClick(time);\r\n");
                     sb.Append("     });\r\n");
                     sb.Append(" }\r\n");
                     #endregion
@@ -1319,7 +1319,7 @@ namespace ECOLOGViewerver2
                 #endregion
 
                 #region ボトム部
-                sb.Append("image_center = new google.maps.MarkerImage('../../../image/center_marker.gif', new google.maps.Size(25, 25), new google.maps.Point(0, 0), new google.maps.Point(12, 12));\r\n");
+                sb.Append("image_center = new google.maps.MarkerImage('../../../../../image/center_marker.gif', new google.maps.Size(25, 25), new google.maps.Point(0, 0), new google.maps.Point(12, 12));\r\n");
                 sb.Append("\r\n");
                 sb.Append("center_marker = new google.maps.Marker({position: map.getCenter(), icon: image_center, zIndex: 400});\r\n");
                 sb.Append("center_marker.setMap(map);\r\n");
