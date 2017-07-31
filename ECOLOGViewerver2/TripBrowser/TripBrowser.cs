@@ -85,7 +85,7 @@ namespace ECOLOGViewerver2
                 string query = "select SubTable.*,case when PICTURE is null then LAG(PICTURE) over (order by SubTable.JST) else PICTURE end as PICTURE ";
                 query += "from (    ";
                 query += "  select ECOLOG.*   ";
-                query += "  from ECOLOG as ECOLOG   ";
+                query += "  from [ECOLOGTable] as ECOLOG   ";
                 query += "  where ECOLOG.TRIP_ID = " + user.tripID + "  ";
                 query += "    ) SubTable   ";
                 query += "left join CORRECTED_PICTURE as PICT on SubTable.DRIVER_ID = PICT.DRIVER_ID   ";
