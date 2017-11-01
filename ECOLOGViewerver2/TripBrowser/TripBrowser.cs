@@ -601,7 +601,7 @@ namespace ECOLOGViewerver2
         
         private async void Slider_Scroll(object sender, EventArgs e)
         {
-            
+            Slider.Enabled = false;
             if (dt_picture.Rows.Count > 3)
             {
                 LabelCurrent.Text = Slider.Value.ToString();
@@ -611,8 +611,13 @@ namespace ECOLOGViewerver2
                 
                 PaintChart(selected_time, move_link);
             }
-        }
+            Slider.Enabled = true;
 
+        }
+        private void Navigated_Event(object sender, EventArgs e)
+        {
+
+        }
         private void TimetextBox_Enter(object sender, EventArgs e)
         {
             TimetextBox.SelectAll();
@@ -699,5 +704,9 @@ namespace ECOLOGViewerver2
         }
         #endregion
 
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            
+        }
     }
 }

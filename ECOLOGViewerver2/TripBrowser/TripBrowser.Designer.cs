@@ -28,7 +28,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label12 = new System.Windows.Forms.Label();
             this.labelLoss = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.webBrowser1.ScrollBarsEnabled = false;
             this.webBrowser1.Size = new System.Drawing.Size(480, 360);
             this.webBrowser1.TabIndex = 5;
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // label12
             // 
@@ -439,9 +440,9 @@
             // 
             // Timechart
             // 
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.Timechart.Legends.Add(legend4);
+            legend5.Enabled = false;
+            legend5.Name = "Legend1";
+            this.Timechart.Legends.Add(legend5);
             this.Timechart.Location = new System.Drawing.Point(505, 320);
             this.Timechart.Name = "Timechart";
             this.Timechart.Size = new System.Drawing.Size(442, 307);
