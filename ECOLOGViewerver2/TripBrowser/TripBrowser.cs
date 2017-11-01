@@ -222,23 +222,28 @@ namespace ECOLOGViewerver2
             }
         }
 
-        private void setGMapCenter(double lat, double lng)
+        private async Task setGMapCenter(double lat, double lng)
         {
-            // 中心座標の移動
-            try
+            await Task.Run(() =>
             {
-                String scripts = "moveCenter();";
-                scripts += "function moveCenter() { map.panTo(new google.maps.LatLng(" + lat + ", " + lng + "));";
-                scripts += "center_marker.setPosition(map.getCenter());";
-                scripts += "}";
-                webBrowser1.Url = new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"); // 実行
-                
-                return;
-            }
-            catch (Exception)
-            {
-                return;
-            }
+                // 中心座標の移動
+                try
+                {
+                    String scripts = "moveCenter();";
+                    scripts += "function moveCenter() { map.panTo(new google.maps.LatLng(" + lat + ", " + lng + "));";
+                    scripts += "center_marker.setPosition(map.getCenter());";
+                    scripts += "}";
+                    //webBrowser1.Url = new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"); // 実行
+                    webBrowser1.Navigate(new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"));
+                    //webBrowser1.Refresh();
+                    
+                    return;
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            });
         }
         #endregion
 
@@ -593,15 +598,17 @@ namespace ECOLOGViewerver2
         #endregion
 
         #region イベント検知
-        private void Slider_Scroll(object sender, EventArgs e)
+        
+        private async void Slider_Scroll(object sender, EventArgs e)
         {
-            Application.DoEvents();
+            
             if (dt_picture.Rows.Count > 3)
             {
                 LabelCurrent.Text = Slider.Value.ToString();
                 LoadImage(int.Parse(LabelCurrent.Text) - 1);
 
-                setGMapCenter(Latitude, Longitude);
+                await setGMapCenter(Latitude, Longitude);
+                
                 PaintChart(selected_time, move_link);
             }
         }
