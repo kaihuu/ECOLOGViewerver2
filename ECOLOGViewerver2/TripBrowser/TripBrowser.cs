@@ -218,7 +218,7 @@ namespace ECOLOGViewerver2
                 Altitudelabel.Text = (altitude).ToString("f1");
                 Linkidlabel.Text = selected_link;
                 linkIDTextBox.Text = selected_link;
-
+                pictureBoxImage.Refresh();
             }
         }
 
@@ -232,7 +232,7 @@ namespace ECOLOGViewerver2
                 scripts += "center_marker.setPosition(map.getCenter());";
                 scripts += "}";
                 webBrowser1.Url = new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"); // 実行
-
+                
                 return;
             }
             catch (Exception)
@@ -595,6 +595,7 @@ namespace ECOLOGViewerver2
         #region イベント検知
         private void Slider_Scroll(object sender, EventArgs e)
         {
+            Application.DoEvents();
             if (dt_picture.Rows.Count > 3)
             {
                 LabelCurrent.Text = Slider.Value.ToString();

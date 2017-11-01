@@ -28,7 +28,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label12 = new System.Windows.Forms.Label();
             this.labelLoss = new System.Windows.Forms.Label();
@@ -414,34 +414,34 @@
             this.SetStartTimeToolStripMenuItem,
             this.SetEndTimeToolStripMenuItem});
             this.ClickedcontextMenuStrip.Name = "ClickedcontextMenuStrip";
-            this.ClickedcontextMenuStrip.Size = new System.Drawing.Size(206, 70);
+            this.ClickedcontextMenuStrip.Size = new System.Drawing.Size(182, 70);
             // 
             // DisplayImageToolStripMenuItem
             // 
             this.DisplayImageToolStripMenuItem.Name = "DisplayImageToolStripMenuItem";
-            this.DisplayImageToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.DisplayImageToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.DisplayImageToolStripMenuItem.Text = "Display Picture";
             this.DisplayImageToolStripMenuItem.Click += new System.EventHandler(this.DisplayImageToolStripMenuItem_Click);
             // 
             // SetStartTimeToolStripMenuItem
             // 
             this.SetStartTimeToolStripMenuItem.Name = "SetStartTimeToolStripMenuItem";
-            this.SetStartTimeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.SetStartTimeToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.SetStartTimeToolStripMenuItem.Text = "Set JST on Start_time";
             this.SetStartTimeToolStripMenuItem.Click += new System.EventHandler(this.SetStartTimeToolStripMenuItem_Click);
             // 
             // SetEndTimeToolStripMenuItem
             // 
             this.SetEndTimeToolStripMenuItem.Name = "SetEndTimeToolStripMenuItem";
-            this.SetEndTimeToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.SetEndTimeToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.SetEndTimeToolStripMenuItem.Text = "Set JST on End_time";
             this.SetEndTimeToolStripMenuItem.Click += new System.EventHandler(this.SetEndTimeToolStripMenuItem_Click);
             // 
             // Timechart
             // 
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.Timechart.Legends.Add(legend1);
+            legend4.Enabled = false;
+            legend4.Name = "Legend1";
+            this.Timechart.Legends.Add(legend4);
             this.Timechart.Location = new System.Drawing.Point(505, 320);
             this.Timechart.Name = "Timechart";
             this.Timechart.Size = new System.Drawing.Size(442, 307);
