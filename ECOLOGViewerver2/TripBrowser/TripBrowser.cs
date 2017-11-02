@@ -232,7 +232,9 @@ namespace ECOLOGViewerver2
                     String scripts = "moveCenter();";
                     scripts += "function moveCenter() { map.panTo(new google.maps.LatLng(" + lat + ", " + lng + "));";
                     scripts += "center_marker.setPosition(map.getCenter());";
+                    scripts += "google.maps.event.trigger(map, 'resize');";
                     scripts += "}";
+                    
                     //webBrowser1.Url = new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"); // 実行
                     webBrowser1.Navigate(new Uri("javascript:" + Uri.EscapeDataString(scripts) + ";"));
                     //webBrowser1.Refresh();
@@ -601,7 +603,7 @@ namespace ECOLOGViewerver2
         
         private async void Slider_Scroll(object sender, EventArgs e)
         {
-            Slider.Enabled = false;
+            //Slider.Enabled = false;
             if (dt_picture.Rows.Count > 3)
             {
                 LabelCurrent.Text = Slider.Value.ToString();
@@ -611,7 +613,7 @@ namespace ECOLOGViewerver2
                 
                 PaintChart(selected_time, move_link);
             }
-            Slider.Enabled = true;
+            //Slider.Enabled = true;
 
         }
         private void Navigated_Event(object sender, EventArgs e)
