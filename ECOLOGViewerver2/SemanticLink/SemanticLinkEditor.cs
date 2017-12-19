@@ -62,7 +62,7 @@ namespace ECOLOGViewerver2
                 string query = "delete ";
                 query += "from SEMANTIC_LINKS ";
                 query += "where SEMANTIC_LINK_ID = " + user.semanticLinkID + " ";
-                query += "and LINK_ID in (" + linkidtextBox.Text + ") ";
+                query += "and LINK_ID in ('" + linkidtextBox.Text + "') ";
 
                 DatabaseAccess.ExecuteQuery(query);
 

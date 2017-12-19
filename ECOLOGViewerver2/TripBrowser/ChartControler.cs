@@ -398,12 +398,12 @@ namespace ECOLOGViewerver2
                 #region クエリ
                 query += "insert into SEMANTIC_LINKS ";
                 query += "select DISTINCT " + MaxofID + ", DRIVER_ID, LINK_ID, " + semantics + " ";
-                query += "from ECOLOG ";
+                query += "from [ECOLOGTable] as ECOLOG ";
                 query += "where JST between '" + StartTimetextBox.Text + "' and '" + EndTimetextBox.Text + "' ";
                 query += "and TRIP_ID = " + user.tripID + " ";
                 query += "and LINK_ID is not null ";
                 #endregion
-
+                query = query.Replace("[ECOLOGTable]", MainForm.ECOLOGTable);
                 if (DatabaseAccess.ExecuteQuery(query))
                 {
                     MessageBox.Show("Make a SemanticLink.", "Complete");

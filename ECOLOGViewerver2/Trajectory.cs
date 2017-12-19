@@ -1586,7 +1586,7 @@ namespace ECOLOGViewerver2
                 sb.Append("     mapTypeId: google.maps.MapTypeId.ROADMAP\r\n");
                 sb.Append(" });\r\n");
                 sb.Append(" \r\n");
-                sb.Append(" var image_black = new google.maps.MarkerImage('../../../image/icon_black.gif',\r\n");
+                sb.Append(" var image_black = new google.maps.MarkerImage('../../../../../image/icon_black.gif',\r\n");
                 sb.Append("     new google.maps.Size(15, 15),\r\n");
                 sb.Append("     new google.maps.Point(0, 0),\r\n");
                 sb.Append("     new google.maps.Point(8, 8));\r\n");
