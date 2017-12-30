@@ -236,6 +236,9 @@ namespace ECOLOGViewerver2
             {
                 tripsTable = DBName.trips_lpf_mm;
             }
+            else if (MainForm.ECOLOGTable == "ECOLOG_Doppler"){
+                tripsTable = DBName.trips_doppler_mm;
+            }
             query = query.Replace("TRIPS", tripsTable);
             query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
             if (useFixed_checkBox.Checked)
@@ -671,6 +674,11 @@ namespace ECOLOGViewerver2
         private void ECOLOGTable_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             select_trajectory();
+        }
+
+        private void ECOLOGTable_comboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
