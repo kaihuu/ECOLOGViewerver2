@@ -228,17 +228,22 @@ namespace ECOLOGViewerver2
             query += "order by START_TIME desc ";
 
             string tripsTable = DBName.trips;
-            if (MainForm.ECOLOGTable == "ECOLOG_MM_LINKS_LOOKUP")
-            {
-                tripsTable = DBName.trips_mm;
-            }
-            else if (MainForm.ECOLOGTable == "[ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP]")
-            {
-                tripsTable = DBName.trips_lpf_mm;
-            }
-            else if (MainForm.ECOLOGTable == "ECOLOG_Doppler"){
-                tripsTable = DBName.trips_doppler_mm;
-            }
+			if (MainForm.ECOLOGTable == "ECOLOG_MM_LINKS_LOOKUP")
+			{
+				tripsTable = DBName.trips_mm;
+			}
+			else if (MainForm.ECOLOGTable == "[ECOLOG_SPEEDLPF0.05_MM_LINKS_LOOKUP]")
+			{
+				tripsTable = DBName.trips_lpf_mm;
+			}
+			else if (MainForm.ECOLOGTable == "ECOLOG_Doppler")
+			{
+				tripsTable = DBName.trips_doppler_mm;
+			}
+			else if (MainForm.ECOLOGTable == "ECOLOG_SIMULATION")
+			{
+				tripsTable = DBName.trips_simulation;
+			}
             query = query.Replace("TRIPS", tripsTable);
             query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
             if (useFixed_checkBox.Checked)
