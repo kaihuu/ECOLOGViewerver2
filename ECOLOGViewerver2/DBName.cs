@@ -13,6 +13,8 @@ namespace ECOLOGViewerver2
         public const string trips_lpf_mm = "[TRIPS_SPEEDLPF0.05_MM_LINKS_LOOKUP2]";
         public const string trips_doppler_mm = "TRIPS_Doppler";
 		public const string trips_simulation = "TRIPS_SIMULATION";
-		
+        public const string trips_doppler_nonmm = "TRIPS_Doppler_NotMM";
+
+
     }
 }

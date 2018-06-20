@@ -244,6 +244,10 @@ namespace ECOLOGViewerver2
 			{
 				tripsTable = DBName.trips_simulation;
 			}
+            else if (MainForm.ECOLOGTable == "ECOLOG_Doppler_NotMM")
+            {
+                tripsTable = DBName.trips_doppler_nonmm;
+            }
             query = query.Replace("TRIPS", tripsTable);
             query = query.Replace("ECOLOG", MainForm.ECOLOGTable);
             if (useFixed_checkBox.Checked)
